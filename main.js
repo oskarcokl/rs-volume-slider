@@ -25,4 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     playFunc();
   }
+
+  slider.addEventListener("input", function (e) {});
+});
+
+const slider = document.getElementById("volumeSlider");
+
+slider.addEventListener("input", function () {
+  const volume = slider.value;
+  let backgroundColor =
+    "linear-gradient(90deg, rgb(255, 210, 0) " +
+    volume +
+    "%, rgb(255, 255, 255) " +
+    volume +
+    "% )";
+  slider.style.background = backgroundColor;
 });
