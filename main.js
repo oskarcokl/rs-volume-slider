@@ -30,10 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const slider = document.getElementById("volumeSlider");
+const audio = document.getElementById("stream");
 
 slider.addEventListener("input", function () {
-  const volume = slider.value;
+  let volume = slider.value;
   let backgroundColor = `linear-gradient(90deg, rgb(255, 210, 0) ${volume}%, 
     rgb(255, 255, 255) ${volume}% )`;
   slider.style.background = backgroundColor;
+  if (volume == 1) volume = 0;
+  audio.volume = volume / 100;
 });
